@@ -7,7 +7,6 @@ module.exports = SupportFun = {
                 modifiedArray.push(jsonArray.recipients[i].email)
             }
         }
-        
         return modifiedArray;
     }
 }
