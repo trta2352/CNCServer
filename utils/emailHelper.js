@@ -12,7 +12,7 @@ module.exports.sendEmail = async function (joke, recipients) {
     await transporter.sendMail({
         from: '<cncemailsender@gmail.com>',
         to: recipients, 
-        subject: 'A Chuck Norriss joke',
+        subject: 'A Chuck Noriss joke',
         html: '<HTML> <p>'+joke.value[0].joke+'<p></HTML>' 
     }, function(error, info){
         if(error){
