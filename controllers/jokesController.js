@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-router.post('/', async (req, res, next) => {console.log(req.body)
+router.post('/', async (req, res, next) => {
     let apiUrl = 'http://api.icndb.com/jokes/random/1';
     let modifiedArray = supportFunctions.modifiyArray(req.body)
     if(modifiedArray.length != 0){

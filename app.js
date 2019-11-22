@@ -1,30 +1,16 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
-//let jwt = require('jsonwebtoken');
 app.use(require("cors")());
 app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
-  //would be used if the user would require to be authenticated.
-  /*let token = req.headers['x-access-token'] 
-  if (token) {
-    jwt.verify(token, config.secret, (err, decoded) => {
-      if (err) {
-        res.status(401).json('Unauthorized request.')
-      } else {
-        req.decoded = decoded;
-        next();
-      }
-    });
-  } else {*/
-    if(req.header('Authorization') === 'apjKjF8QG43MI8xPr66YVeBmLyKLmN'){
-        next();
-    }
-    else{
-      res.status(401).json('Unauthorized request.')
-    }
-  //}
+  if(req.header('Authorization') === 'apjKjF8QG43MI8xPr66YVeBmLyKLmN'){
+    next();
+  }
+  else{
+    res.status(401).json('Unauthorized request.')
+  }
 })
 
 app.use('/api/jokes', require('./controllers/jokesController.js'));
